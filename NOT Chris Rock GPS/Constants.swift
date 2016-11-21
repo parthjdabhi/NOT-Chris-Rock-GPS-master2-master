@@ -25,6 +25,9 @@ let url_updateLocation   = BaseURL + "update_location.php"
 
 let BaseUrlSounds       = "http://www.notchrisrock.com/gps/api/sounds/"
 
+//let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
+//let openWeatherMapAPIKey = "a08c4589e8e874b28372aa244086a49c"
+
 let googlePlacesAPIKey  = "AIzaSyCQ9yhrhgV3OEJPzFb_87XfJzl0O3_OXRM"
 let googleMapsApiKey    = "AIzaSyB5jzZt5pc9-WVIEvfaBIZAIvQOYLhVu94"
 
@@ -219,6 +222,10 @@ var CLocation:CLLocation?// = CLLocation()
 var LastSearchLocation:CLLocation?
 var CLocationSelected:CLLocation = CLLocation()
 var CLocationPlace:String = String()
+
+//wethere api
+var weatherGetter: WeatherGetter = WeatherGetter(delegate: nil)
+var weather: Weather?
 
 //YELP Api
 let apiConsoleInfo = YelpAPIConsole()

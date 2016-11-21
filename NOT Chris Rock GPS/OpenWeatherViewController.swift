@@ -26,11 +26,11 @@ class OpenWeatherViewController: UIViewController,
     @IBOutlet weak var getCityWeatherButton: UIButton!
     
     let locationManager = CLLocationManager()
-    var weather: WeatherGetter!
+    //var weather: WeatherGetter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        weather = WeatherGetter(delegate: self)
+        weatherGetter.delegate = self
 
         cityLabel.text = "simple weather"
         weatherLabel.text = ""
@@ -62,7 +62,7 @@ class OpenWeatherViewController: UIViewController,
             return
         }
         setWeatherButtonStates(false)
-        weather.getWeatherByCity(cityTextField.text!.urlEncoded)
+        weatherGetter.getWeatherByCity(cityTextField.text!.urlEncoded)
     }
     
     func setWeatherButtonStates(state: Bool) {
@@ -154,8 +154,8 @@ class OpenWeatherViewController: UIViewController,
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
-        weather.getWeatherByCoordinates(latitude: newLocation.coordinate.latitude,
-                                        longitude: newLocation.coordinate.longitude)
+        weatherGetter.getWeatherByCoordinates(latitude: newLocation.coordinate.latitude,
+                                               longitude: newLocation.coordinate.longitude)
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

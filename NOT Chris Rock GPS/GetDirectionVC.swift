@@ -40,6 +40,7 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     
     var bizForRoute: Business?
     var routeTimer:NSTimer?
+    var wetherTimer:NSTimer?
     var lasETASync:NSDate = NSDate()
     
     @IBOutlet var btnMenu: UIButton?
@@ -408,7 +409,7 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         }
     }
     
-    
+    // Plays Genereal sounds on each time
     func onEveryTwentyMinutesOfRoute()
     {
         //recordTimer?.invalidate()
@@ -423,12 +424,66 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         }
     }
     
+    // Plays Wether sounds
+    func onPlayWeatherAudio()
+    {
+        //wetherTimer?.invalidate()
+        print("onPlayWeatherAudio \(wetherTimer) \(weather) \n\n")
+        
+        
+        print("humidity \(weather?.humidity)")
+        print("pressure \(weather?.pressure)")
+        print("cloudCover \(weather?.cloudCover)")
+        print("windSpeed \(weather?.windSpeed)")
+        
+        print("windDirection \(weather?.windDirection)")
+        print("rainfallInLast3Hours \(weather?.rainfallInLast3Hours)")
+        
+        if weather == nil {
+            return
+        }
+        
+        // !! Here i comapres rainfallInLast3Hours to check sunny or rainy season but we also includes cloudCover, humidity as you would like !!
+        // Rainy season check
+        if let rainfallInLast3Hours = weather?.rainfallInLast3Hours
+            where rainfallInLast3Hours >= 0.5
+        {
+            //Rainy day
+            if let mp3Url = NSURL(string: "\(BaseUrlSounds)General-Categories/home-services.wav") {
+                //            mp3Urls.append(mp3Url)
+                if let AudioIdem = AudioItem(soundURLs: [AudioQuality.Medium : mp3Url]) {
+                    player.mode = .NoRepeat
+                    player.playItem(AudioIdem)
+                }
+            }
+        } else {
+            //Sunny day
+            if let mp3Url = NSURL(string: "\(BaseUrlSounds)General-Categories/home-services.wav") {
+                //            mp3Urls.append(mp3Url)
+                if let AudioIdem = AudioItem(soundURLs: [AudioQuality.Medium : mp3Url]) {
+                    player.mode = .NoRepeat
+                    player.playItem(AudioIdem)
+                }
+            }
+        }
+        
+        
+    }
+    
     func startObservingRoute()
     {
         isRouteStarted = true
         
-        //Start 20 Minute timer
-        routeTimer = NSTimer.scheduledTimerWithTimeInterval(20*60, target: self, selector: #selector(GetDirectionVC.onEveryTwentyMinutesOfRoute), userInfo: nil, repeats: true)
+        weatherGetter.getWeatherByCoordinates(latitude: CLocation?.coordinate.latitude ?? 0 ,
+                                              longitude: CLocation?.coordinate.longitude ?? 0)
+        
+        // Plays Wether sounds on every 20 minutes
+        wetherTimer = NSTimer.scheduledTimerWithTimeInterval(19*60, target: self, selector: #selector(GetDirectionVC.onPlayWeatherAudio), userInfo: nil, repeats: true)
+        
+        //Start 20 Minute timer (Low 5, Medium 10, High 20)
+        let TimeInteval_Priority:Double = ((Myfilters.SettingSub == SubSetting[0]) ? 5 : (Myfilters.SettingSub == SubSetting[1]) ? 10 : 20)
+        routeTimer = NSTimer.scheduledTimerWithTimeInterval(TimeInteval_Priority * 60, target: self, selector: #selector(GetDirectionVC.onEveryTwentyMinutesOfRoute), userInfo: nil, repeats: true)
+        
         
         self.directionDetail = self.tableData.objectForKey("steps") as! NSArray
         print("",self.directionDetail)
@@ -451,7 +506,6 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         markerNextTurn.title = dictTable.objectForKey("instructions") as! NSString as String
         markerNextTurn.position = nextTurnLocation!.coordinate
         markerNextTurn.map = self.googleMapsView
-        
         
         
         let camera = GMSCameraPosition.cameraWithLatitude(LocationManager.sharedInstance.latitude,longitude: LocationManager.sharedInstance.longitude, zoom: 19)
@@ -533,6 +587,10 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     }
     
     func playSoundForInstruction(instruction:String?) {
+        
+        AudioItems?.removeAll()
+        player.stop()
+        
         guard let inst = instruction else {
             print("Instruction not found")
             return

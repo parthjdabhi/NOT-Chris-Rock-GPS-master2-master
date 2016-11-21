@@ -18,9 +18,9 @@ class WeatherGetter {
     private let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
     private let openWeatherMapAPIKey = "a08c4589e8e874b28372aa244086a49c"
     
-    private var delegate: WeatherGetterDelegate
+    var delegate: WeatherGetterDelegate?
     
-    init(delegate: WeatherGetterDelegate) {
+    init(delegate: WeatherGetterDelegate?) {
         self.delegate = delegate
     }
     
@@ -45,7 +45,7 @@ class WeatherGetter {
             if let networkError = error {
 
                 // An error occurred while trying to get data from the server.
-                self.delegate.didNotGetWeather(networkError)
+                self.delegate?.didNotGetWeather(networkError)
             }
             else {
                 do {
@@ -54,13 +54,14 @@ class WeatherGetter {
                         data!,
                         options: .MutableContainers) as! [String: AnyObject]
                     
-                    let weather = Weather(weatherData: weatherData)
+                    print("\n\n weatherData",weatherData)
+                    weather = Weather(weatherData: weatherData)
 
-                    self.delegate.didGetWeather(weather)
+                    self.delegate?.didGetWeather(weather ?? Weather(weatherData: [:]))
                 }
                 catch let jsonError as NSError {
                     // An error occurred while trying to convert the data into a Swift dictionary.
-                    self.delegate.didNotGetWeather(jsonError)
+                    self.delegate?.didNotGetWeather(jsonError)
                 }
             }
         }

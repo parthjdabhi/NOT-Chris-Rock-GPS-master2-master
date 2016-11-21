@@ -286,8 +286,6 @@ class DrawerContentViewController: UIViewController, UITableViewDelegate, UITabl
             
             StartPlaying()
         }
-        
-        
     }
     
     func doPlaySoundForBusnessCount()

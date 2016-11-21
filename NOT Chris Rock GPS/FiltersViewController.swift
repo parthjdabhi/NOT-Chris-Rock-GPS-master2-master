@@ -64,6 +64,7 @@ class FiltersViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         Myfilters.SettingMain = MainSetting[swSettingMain?.selectedIndex ?? 0]
         Myfilters.SettingSub = SubSetting[swSettingSub?.selectedIndex ?? 0]
+        
     }
     
     override func didReceiveMemoryWarning() {
