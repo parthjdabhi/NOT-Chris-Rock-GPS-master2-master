@@ -43,6 +43,8 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     var wetherTimer:NSTimer?
     var lasETASync:NSDate = NSDate()
     
+    var lastSpeedSync:NSDate = NSDate()
+    
     @IBOutlet var btnMenu: UIButton?
     //@IBOutlet weak var drawMap: MKMapView!
     @IBOutlet weak var googleMapsView : GMSMapView!
@@ -466,8 +468,6 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
                 }
             }
         }
-        
-        
     }
     
     func startObservingRoute()
@@ -476,6 +476,8 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         
         weatherGetter.getWeatherByCoordinates(latitude: CLocation?.coordinate.latitude ?? 0 ,
                                               longitude: CLocation?.coordinate.longitude ?? 0)
+        
+        lastSpeedSync = NSDate()
         
         // Plays Wether sounds on every 20 minutes
         wetherTimer = NSTimer.scheduledTimerWithTimeInterval(19*60, target: self, selector: #selector(GetDirectionVC.onPlayWeatherAudio), userInfo: nil, repeats: true)
@@ -516,9 +518,9 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
             //27-2-2018
             print("Speed : ",CLocation?.speed)
             
-            if let speed = CLocation?.speed {
-                //self.lblSpeed.text = "Speed \(speed)  KMPH \(speed * 3.6)"
-            }
+            //if let speed = CLocation?.speed {
+            //    self.lblSpeed.text = "Speed \(speed)  KMPH \(speed * 3.6)"
+            //}
             print("\n")
             
             CLocation = CLLocation(latitude: latitude, longitude: longitude)
@@ -570,6 +572,27 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
             
             if self.isRouteStarted {
                 self.getDistanceETA()
+            }
+            
+            //Check Speed Test for 25Miles/Second
+            if let speed = CLocation?.speed where speed < 25 {
+                print("lastSpeedSync Duration : ",self.lastSpeedSync.timeIntervalSinceNow)
+                if self.lastSpeedSync.timeIntervalSinceNow <= -120 {
+                    self.lastSpeedSync = NSDate()
+                    
+                    //Play Sound after 2 minutes if speed is less than 25 mile/S
+                    //statement12.wav - i know you are texting
+                    if let mp3Url = NSURL(string: "\(BaseUrlSounds)TrafficMonitor-LITE/statement12.wav") {
+                        //mp3Urls.append(mp3Url)
+                        if let AudioIdem = AudioItem(soundURLs: [AudioQuality.Medium : mp3Url]) {
+                            player.mode = .NoRepeat
+                            player.playItem(AudioIdem)
+                        }
+                    }
+                }
+            } else {
+                self.lastSpeedSync = NSDate()
+                print("you are going fast as speed of : ",CLocation?.speed ?? 0)
             }
         }
     }
