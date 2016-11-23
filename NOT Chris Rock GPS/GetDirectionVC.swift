@@ -486,7 +486,6 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         let TimeInteval_Priority:Double = ((Myfilters.SettingSub == SubSetting[0]) ? 5 : (Myfilters.SettingSub == SubSetting[1]) ? 10 : 20)
         routeTimer = NSTimer.scheduledTimerWithTimeInterval(TimeInteval_Priority * 60, target: self, selector: #selector(GetDirectionVC.onEveryTwentyMinutesOfRoute), userInfo: nil, repeats: true)
         
-        
         self.directionDetail = self.tableData.objectForKey("steps") as! NSArray
         print("",self.directionDetail)
         var routePos = 0

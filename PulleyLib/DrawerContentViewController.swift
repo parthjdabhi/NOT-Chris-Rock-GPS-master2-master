@@ -248,7 +248,7 @@ class DrawerContentViewController: UIViewController, UITableViewDelegate, UITabl
         
         if self.businessListCount == 0 {
             //Audio: Audio For No Business found
-            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("food-stmt10", withExtension: "wav")!.absoluteString)
+            //self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("food-stmt10", withExtension: "wav")!.absoluteString)
             StartPlaying()
             
         } else if self.businessListCount == 1 {
@@ -256,10 +256,10 @@ class DrawerContentViewController: UIViewController, UITableViewDelegate, UITabl
             //Audio: Audio For One Business found
             
             //Audio: i Founds
-            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt1_ifound", withExtension: "wav")!.absoluteString)
+            //self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt1_ifound", withExtension: "wav")!.absoluteString)
             
             //Number
-            doPlaySoundForBusnessCount()
+            //doPlaySoundForBusnessCount()
             
             //Audio: Restaurant name
             doCheckFoodSoundForSearchTerm()
@@ -267,22 +267,22 @@ class DrawerContentViewController: UIViewController, UITableViewDelegate, UITabl
             StartPlaying()
         } else {
             //Audio: i Founds
-            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt1_ifound", withExtension: "wav")!.absoluteString)
+            //self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt1_ifound", withExtension: "wav")!.absoluteString)
             
             //Number
-            doPlaySoundForBusnessCount()
+            //doPlaySoundForBusnessCount()
             
             //Audio: Place called
-            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt2_places", withExtension: "wav")!.absoluteString)
+            //self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt2_places", withExtension: "wav")!.absoluteString)
             
             //Play only if restaurants name is founds -- "called papa jones check 'em out"
-            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt3_for", withExtension: "wav")!.absoluteString)
-            
+            //self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt3_for", withExtension: "wav")!.absoluteString)
+
             //Audio: Restaurant name
             doCheckFoodSoundForSearchTerm()
-            
+
             //Audio: Check 'em out
-            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt5_checkthemout", withExtension: "wav")!.absoluteString)
+            //self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt5_checkthemout", withExtension: "wav")!.absoluteString)
             
             StartPlaying()
         }
@@ -300,371 +300,405 @@ class DrawerContentViewController: UIViewController, UITableViewDelegate, UITabl
         
         // Food store name
         if inst.containsIgnoringCase("5 Guys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/5-guys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/5-guys.wav")
         }
         else if inst.containsIgnoringCase("7/11") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/7-11.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/7-11.wav")
         }
         else if inst.containsIgnoringCase("A&W") || inst.containsIgnoringCase("A W") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/a&w.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/a&w.wav")
         }
         else if inst.containsIgnoringCase("Applebees") || inst.containsIgnoringCase("Applebee") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/applebees.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/applebees.wav")
         }
         else if inst.containsIgnoringCase("Arbys") || inst.containsIgnoringCase("Arby") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/arbys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/arbys.wav")
         }
         else if inst.containsIgnoringCase("Backyard Burgers") || inst.containsIgnoringCase("Backyard Burger") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/backyardburgers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/backyardburgers.wav")
         }
         else if inst.containsIgnoringCase("Bakers Dozen Donuts") || inst.containsIgnoringCase("Bakers Dozen Donut") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bakers-dozen-donuts.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bakers-dozen-donuts.wav")
         }
         else if inst.containsIgnoringCase("Bar-B-Cutie") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bar-b-cutie.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bar-b-cutie.wav")
         }
         else if inst.containsIgnoringCase("Bar Burrito") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/barburrito.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/barburrito.wav")
         }
         else if inst.containsIgnoringCase("Baskin Robbins") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/baskin-robbins.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/baskin-robbins.wav")
         }
         else if inst.containsIgnoringCase("Beaver Tails") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/beavertails.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/beavertails.wav")
         }
         else if inst.containsIgnoringCase("Ben & Florentine") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ben-and-florentine.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ben-and-florentine.wav")
         }
         else if inst.containsIgnoringCase("Ben & Jerrys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ben-and-jerrys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ben-and-jerrys.wav")
         }
         else if inst.containsIgnoringCase("Benjys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/benjys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/benjys.wav")
         }
         else if inst.containsIgnoringCase("Big Boy") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/big-boy.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/big-boy.wav")
         }
         else if inst.containsIgnoringCase("BJs") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bjs.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bjs.wav")
         }
         else if inst.containsIgnoringCase("Blimpie") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/blimpie3.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/blimpie3.wav")
         }
         else if inst.containsIgnoringCase("Bob Evans") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bob-evans.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bob-evans.wav")
         }
         else if inst.containsIgnoringCase("Bojangles") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bojangles.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bojangles.wav")
         }
         else if inst.containsIgnoringCase("Bonefish Grill") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bonefish-grill.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/bonefish-grill.wav")
         }
         else if inst.containsIgnoringCase("Booster-Juice") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/booster-juice.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/booster-juice.wav")
         }
         else if inst.containsIgnoringCase("Boston Market") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/boston-market.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/boston-market.wav")
         }
         else if inst.containsIgnoringCase("Boston Pizza") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/boston-pizza.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/boston-pizza.wav")
         }
         else if inst.containsIgnoringCase("Burger Baron") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/burger-baron.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/burger-baron.wav")
         }
         else if inst.containsIgnoringCase("Burger King") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/burger-king.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/burger-king.wav")
         }
         else if inst.containsIgnoringCase("BW3") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/BW3.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/BW3.wav")
         }
         else if inst.containsIgnoringCase("C Lovers Fish-N-Chips") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/c-lovers-fish-n-chips.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/c-lovers-fish-n-chips.wav")
         }
         else if inst.containsIgnoringCase("Captain Ds Seafood") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/Capt-Ds-Seafood.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/Capt-Ds-Seafood.wav")
         }
         else if inst.containsIgnoringCase("Captain Submarine") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/captain-submarine.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/captain-submarine.wav")
         }
         else if inst.containsIgnoringCase("Captains Sub") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/capts-sub.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/capts-sub.wav")
         }
         else if inst.containsIgnoringCase("Carls Jr") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/carls-jr.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/carls-jr.wav")
         }
         else if inst.containsIgnoringCase("Carrabbas") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/carrabbas.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/carrabbas.wav")
         }
         else if inst.containsIgnoringCase("Checkers") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/checkers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/checkers.wav")
         }
         else if inst.containsIgnoringCase("Cheddars") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cheddars.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cheddars.wav")
         }
         else if inst.containsIgnoringCase("Cheesecake Factory") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cheesecake-factory.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cheesecake-factory.wav")
         }
         else if inst.containsIgnoringCase("Chez Ashton") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chez-aston.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chez-aston.wav")
         }
         else if inst.containsIgnoringCase("Chic-Fil-A") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chic-fil-a.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chic-fil-a.wav")
         }
         else if inst.containsIgnoringCase("Chicken Cottage") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chicken-cottage.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chicken-cottage.wav")
         }
         else if inst.containsIgnoringCase("Chicken Delight") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chicken-delight.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chicken-delight.wav")
         }
         else if inst.containsIgnoringCase("Chilis") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chilis.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chilis.wav")
         }
         else if inst.containsIgnoringCase("Chipotle") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chipotle.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chipotle.wav")
         }
         else if inst.containsIgnoringCase("Chuck-E-Cheese") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chuck-e-cheese.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/chuck-e-cheese.wav")
         }
         else if inst.containsIgnoringCase("Churchs Chicken") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/churchs-chicken.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/churchs-chicken.wav")
         }
         else if inst.containsIgnoringCase("Cicis Pizza") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cicis-pizza.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cicis-pizza.wav")
         }
         else if inst.containsIgnoringCase("Cinnabun") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cinnabun.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cinnabun.wav")
         }
         else if inst.containsIgnoringCase("Circle K") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/circle-k.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/circle-k.wav")
         }
         else if inst.containsIgnoringCase("Coffee Time") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/coffeetime.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/coffeetime.wav")
         }
         else if inst.containsIgnoringCase("Cora") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cora.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cora.wav")
         }
         else if inst.containsIgnoringCase("Country Style") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/countrystyle.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/countrystyle.wav")
         }
         else if inst.containsIgnoringCase("Cows Ice Cream") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cows-ice-cream.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cows-ice-cream.wav")
         }
         else if inst.containsIgnoringCase("CPK") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cpk.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cpk.wav")
         }
         else if inst.containsIgnoringCase("Cracker Barrel") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cracker-barrel.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/cracker-barrel.wav")
         }
         else if inst.containsIgnoringCase("Culvers") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/culvers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/culvers.wav")
         }
         else if inst.containsIgnoringCase("Dairy Queen") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dairy-queen.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dairy-queen.wav")
         }
         else if inst.containsIgnoringCase("Del Taco") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/del-taco")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/del-taco")
         }
         else if inst.containsIgnoringCase("Dennys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dennys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dennys.wav")
         }
         else if inst.containsIgnoringCase("Dic Anns Hamburgers") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dic-ann-hamburgers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dic-ann-hamburgers.wav")
         }
         else if inst.containsIgnoringCase("Dixie Chicken") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dixie-chicken.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dixie-chicken.wav")
         }
         else if inst.containsIgnoringCase("Dixie Lee Fried Chicken") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dixie-lee-fried-chicken.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dixie-lee-fried-chicken.wav")
         }
         else if inst.containsIgnoringCase("Dominos") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dominos.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dominos.wav")
         }
         else if inst.containsIgnoringCase("Donut Diner") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/donut-diner.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/donut-diner.wav")
         }
         else if inst.containsIgnoringCase("Dunkin Donuts") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dunkin-donuts.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/dunkin-donuts.wav")
         }
         else if inst.containsIgnoringCase("East Side Marios") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/east-side-marios.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/east-side-marios.wav")
         }
         else if inst.containsIgnoringCase("Eat Restaurant") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/eat-restaurant.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/eat-restaurant.wav")
         }
         else if inst.containsIgnoringCase("Edo Japan") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/edo-japan.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/edo-japan.wav")
         }
         else if inst.containsIgnoringCase("Eds Easy Diner") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/applebees.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/applebees.wav")
         }
         else if inst.containsIgnoringCase("eds-easy-diner") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/applebees.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/applebees.wav")
         }
         else if inst.containsIgnoringCase("Einstein Brothers Bagels") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/einstein-bros-bagels.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/einstein-bros-bagels.wav")
         }
         else if inst.containsIgnoringCase("Extreme Pita") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/extreme-pita.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/extreme-pita.wav")
         }
         else if inst.containsIgnoringCase("Famous Daves") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/famous-daves.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/famous-daves.wav")
         }
         else if inst.containsIgnoringCase("Fast Eddies") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/fast-eddies.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/fast-eddies.wav")
         }
         else if inst.containsIgnoringCase("Firehouse Subs") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/firehouse-subs.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/firehouse-subs.wav")
         }
         else if inst.containsIgnoringCase("Friendlys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/friendlys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/friendlys.wav")
         }
         else if inst.containsIgnoringCase("Fryers") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/fryers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/fryers.wav")
         }
         else if inst.containsIgnoringCase("Gojis") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/gojis.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/gojis.wav")
         }
         else if inst.containsIgnoringCase("Golden Corral") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/golden-corral.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/golden-corral.wav")
         }
         else if inst.containsIgnoringCase("Greco Pizza") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/greco-pizza.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/greco-pizza.wav")
         }
         else if inst.containsIgnoringCase("Hardees") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/hardees.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/hardees.wav")
         }
         else if inst.containsIgnoringCase("Harveys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/harveys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/harveys.wav")
         }
         else if inst.containsIgnoringCase("Heros Cert Burgers") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/heros-cert-burgers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/heros-cert-burgers.wav")
         }
         else if inst.containsIgnoringCase("Ho Lee Chow") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ho-lee-chow.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ho-lee-chow.wav")
         }
         else if inst.containsIgnoringCase("Hooters") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/hooters.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/hooters.wav")
         }
         else if inst.containsIgnoringCase("Humptys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/humptys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/humptys.wav")
         }
         else if inst.containsIgnoringCase("IHOP") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ihop.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ihop.wav")
         }
         else if inst.containsIgnoringCase("In-And-Out-Burger") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/in-and-out-burger.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/in-and-out-burger.wav")
         }
         else if inst.containsIgnoringCase("Jack In The Box") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jack-in-the-box.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jack-in-the-box.wav")
         }
         else if inst.containsIgnoringCase("Jamba Juice") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jamba-juice.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jamba-juice.wav")
         }
         else if inst.containsIgnoringCase("Jasons Deli") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jasons-deli.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jasons-deli.wav")
         }
         else if inst.containsIgnoringCase("Jimmy Johns") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jimmy-johns.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jimmy-johns.wav")
         }
         else if inst.containsIgnoringCase("Jimmy The Greek") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jimmy-the-greek.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jimmy-the-greek.wav")
         }
         else if inst.containsIgnoringCase("Jugo Juice") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jugo-juice.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/jugo-juice.wav")
         }
         else if inst.containsIgnoringCase("Kaspas") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/kaspas.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/kaspas.wav")
         }
         else if inst.containsIgnoringCase("KFC") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/kfc.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/kfc.wav")
         }
         else if inst.containsIgnoringCase("Krispy Kreme Doughnuts") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/krispy-kreme-dougnuts.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/krispy-kreme-dougnuts.wav")
         }
         else if inst.containsIgnoringCase("Krystal") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/krystal.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/krystal.wav")
         }
         else if inst.containsIgnoringCase("Labelle Prov") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/labelle-prov.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/labelle-prov.wav")
         }
         else if inst.containsIgnoringCase("Licks Homeburgers") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/licks-homeburgers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/licks-homeburgers.wav")
         }
         else if inst.containsIgnoringCase("Little Caesars") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/little-caesars.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/little-caesars.wav")
         }
         else if inst.containsIgnoringCase("Little Chef") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/little-chef.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/little-chef.wav")
         }
         else if inst.containsIgnoringCase("Logans Roadhouse") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/logans-roadhouse.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/logans-roadhouse.wav")
         }
         else if inst.containsIgnoringCase("Long John Silvers") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/long-john-silvers.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/long-john-silvers.wav")
         }
         else if inst.containsIgnoringCase("Longhorn Steakhouse") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/longhorn-steakhouse.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/longhorn-steakhouse.wav")
         }
         else if inst.containsIgnoringCase("Macaroni") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/macaroni-grill.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/macaroni-grill.wav")
         }
         else if inst.containsIgnoringCase("Manchu Wok") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/manchu-wok.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/manchu-wok.wav")
         }
         else if inst.containsIgnoringCase("Mary Browns") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mary-browns.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mary-browns.wav")
         }
         else if inst.containsIgnoringCase("McDonalds") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mcdonalds.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mcdonalds.wav")
         }
         else if inst.containsIgnoringCase("Millies Cookies") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/millies-cookies.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/millies-cookies.wav")
         }
         else if inst.containsIgnoringCase("Moes") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/moes.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/moes.wav")
         }
         else if inst.containsIgnoringCase("Morleys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/morleys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/morleys.wav")
         }
         else if inst.containsIgnoringCase("Mr. Greek") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mr-greek.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mr-greek.wav")
         }
         else if inst.containsIgnoringCase("Mr. Mikes") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mr-mikes.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mr-mikes.wav")
         }
         else if inst.containsIgnoringCase("Mr. Sub") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mr-sub.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/mr-sub.wav")
         }
         else if inst.containsIgnoringCase("NY Fries") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ny-fries.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/ny-fries.wav")
         }
         else if inst.containsIgnoringCase("Ocharleys") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/Ocharleys.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/Ocharleys.wav")
         }
         else if inst.containsIgnoringCase("Olive Garden") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/olive-garden.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/olive-garden.wav")
         }
         else if inst.containsIgnoringCase("On The Border") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/on-the-border.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/on-the-border.wav")
         }
         else if inst.containsIgnoringCase("Orange Julius") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/orange-julius.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/orange-julius.wav")
         }
         else if inst.containsIgnoringCase("Outback") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/outback.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/outback.wav")
         }
         else if inst.containsIgnoringCase("Panago") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/panago.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/panago.wav")
         }
         else if inst.containsIgnoringCase("Panda Express") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/panda-express.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/panda-express.wav")
         }
         else if inst.containsIgnoringCase("Panera Bread") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/panera-bread.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/panera-bread.wav")
         }
         else if inst.containsIgnoringCase("Papa Johns") {
-            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/papa-johns.wav")
+            self.AddStoreNameAudioToQueue(ofUrl: "\(BaseUrlSounds)Restaurants/papa-johns.wav")
         }
+        else
+        {
+            //No Restaurant name found
+            
+            //Audio: i Founds
+            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt1_ifound", withExtension: "wav")!.absoluteString)
+            
+            //Number
+            doPlaySoundForBusnessCount()
+            
+            //Audio: Place called
+            self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt2_places", withExtension: "wav")!.absoluteString)
+        }
+    }
+    
+    func AddStoreNameAudioToQueue(ofUrl url:String?)
+    {
+        //Audio: i Founds
+        self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt1_ifound", withExtension: "wav")!.absoluteString)
+        
+        //Number
+        doPlaySoundForBusnessCount()
+        
+        //Audio: Place called
+        self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt2_places", withExtension: "wav")!.absoluteString)
+        
+        //Play only if restaurants name is founds -- "called papa jones check 'em out"
+        self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt3_for", withExtension: "wav")!.absoluteString)
+        
+        //Audio: Restaurant name
+        self.AddAudioToQueue(ofUrl: url)
+        
+        //Audio: Check 'em out
+        self.AddAudioToQueue(ofUrl: NSBundle.mainBundle().URLForResource("foodstmt4-pt5_checkthemout", withExtension: "wav")!.absoluteString)
     }
     
     func AddAudioToQueue(ofUrl url:String?)

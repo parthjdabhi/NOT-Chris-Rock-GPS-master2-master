@@ -797,4 +797,16 @@ public class PulleyViewController: UIViewController, UIScrollViewDelegate, Pulle
         
         return primaryContentViewController
     }
+    
+    //
+    func onKeyboardUp() {
+        //
+        
+    }
+    
+    //
+    func onKeyboardDown() {
+        //
+        
+    }
 }
