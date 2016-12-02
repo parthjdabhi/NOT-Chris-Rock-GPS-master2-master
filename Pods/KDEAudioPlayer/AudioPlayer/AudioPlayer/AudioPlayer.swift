@@ -423,7 +423,9 @@ public class AudioPlayer: NSObject {
                 #if os(iOS) || os(tvOS)
                     do {
                         try AVAudioSession.sharedInstance().setActive(true)
-                        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                        //try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)   //AVAudioSessionCategorySoloAmbient
+                        try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryMultiRoute, withOptions: AVAudioSessionCategoryOptions.DuckOthers) // AVAudioSessionCategorySoloAmbient is default
+                        
                     } catch { }
                 #endif
 

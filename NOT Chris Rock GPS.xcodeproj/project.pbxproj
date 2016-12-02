@@ -396,6 +396,9 @@
 		5E8D29031DA28A6F00EFAC9C /* FiltersSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D28FE1DA28A6F00EFAC9C /* FiltersSwitchTableViewCell.swift */; };
 		5E8D29041DA28A6F00EFAC9C /* UISwitch+MyYelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D28FF1DA28A6F00EFAC9C /* UISwitch+MyYelp.swift */; };
 		5E8D29071DA28A9400EFAC9C /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D29061DA28A9400EFAC9C /* YelpClient.swift */; };
+		5E9118661DF180D3001DB0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6AE7C11D88C782001E5B65 /* AppDelegate.swift */; };
+		5E9118681DF180EA001DB0CA /* GetDirectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB88111D9F0F4A004DE008 /* GetDirectionVC.swift */; };
+		5E91186A1DF18338001DB0CA /* GlobalDirectionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9118691DF18338001DB0CA /* GlobalDirectionCode.swift */; };
 		5EA32C771DAF7C310090482B /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA32C751DAF7C310090482B /* PulleyPassthroughScrollView.swift */; };
 		5EA32C781DAF7C310090482B /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA32C761DAF7C310090482B /* PulleyViewController.swift */; };
 		5EA32C7C1DAF7C3D0090482B /* DrawerContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA32C791DAF7C3D0090482B /* DrawerContentViewController.swift */; };
@@ -621,7 +624,6 @@
 		DA334BEE1D8A7CE0002E4E1F /* StopButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA334BEC1D8A7CE0002E4E1F /* StopButton@2x.png */; };
 		DA334BEF1D8A7CE0002E4E1F /* PlayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DA334BED1D8A7CE0002E4E1F /* PlayButton@2x.png */; };
 		DA334BF61D8A81AE002E4E1F /* MultipleTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA334BF51D8A81AE002E4E1F /* MultipleTapViewController.swift */; };
-		DA6AE7C21D88C782001E5B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6AE7C11D88C782001E5B65 /* AppDelegate.swift */; };
 		DA6AE7C41D88C782001E5B65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6AE7C31D88C782001E5B65 /* ViewController.swift */; };
 		DA6AE7CA1D88C782001E5B65 /* NOT_Chris_Rock_GPS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA6AE7C81D88C782001E5B65 /* NOT_Chris_Rock_GPS.xcdatamodeld */; };
 		DA6AE7CC1D88C782001E5B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6AE7CB1D88C782001E5B65 /* Assets.xcassets */; };
@@ -656,7 +658,6 @@
 		DAFB88081D9F0C42004DE008 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB88071D9F0C42004DE008 /* PlaceViewController.swift */; };
 		DAFB880D1D9F0DAD004DE008 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB880C1D9F0DAD004DE008 /* UIViewControllerExt.swift */; };
 		DAFB880F1D9F0DE1004DE008 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB880E1D9F0DE1004DE008 /* LocationManager.swift */; };
-		DAFB88151D9F0F4A004DE008 /* GetDirectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB88111D9F0F4A004DE008 /* GetDirectionVC.swift */; };
 		DAFB88161D9F0F4A004DE008 /* DirectionDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB88121D9F0F4A004DE008 /* DirectionDetailVC.swift */; };
 		DAFB88171D9F0F4A004DE008 /* DirectionDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB88131D9F0F4A004DE008 /* DirectionDetailTableViewCell.swift */; };
 		DAFB88181D9F0F4A004DE008 /* DirectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB88141D9F0F4A004DE008 /* DirectionManager.swift */; };
@@ -1069,6 +1070,7 @@
 		5E8D28FE1DA28A6F00EFAC9C /* FiltersSwitchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		5E8D28FF1DA28A6F00EFAC9C /* UISwitch+MyYelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+MyYelp.swift"; sourceTree = "<group>"; };
 		5E8D29061DA28A9400EFAC9C /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		5E9118691DF18338001DB0CA /* GlobalDirectionCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDirectionCode.swift; sourceTree = "<group>"; };
 		5EA32C751DAF7C310090482B /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
 		5EA32C761DAF7C310090482B /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
 		5EA32C791DAF7C3D0090482B /* DrawerContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerContentViewController.swift; sourceTree = "<group>"; };
@@ -2376,6 +2378,7 @@
 				DAFB88121D9F0F4A004DE008 /* DirectionDetailVC.swift */,
 				DAFB88131D9F0F4A004DE008 /* DirectionDetailTableViewCell.swift */,
 				DAFB88141D9F0F4A004DE008 /* DirectionManager.swift */,
+				5E9118691DF18338001DB0CA /* GlobalDirectionCode.swift */,
 			);
 			name = Direction;
 			sourceTree = "<group>";
@@ -3271,6 +3274,7 @@
 				DA6AE8001D88C907001E5B65 /* AppState.swift in Sources */,
 				DAFB880F1D9F0DE1004DE008 /* LocationManager.swift in Sources */,
 				DAFB88181D9F0F4A004DE008 /* DirectionManager.swift in Sources */,
+				5E9118681DF180EA001DB0CA /* GetDirectionVC.swift in Sources */,
 				5E8D29031DA28A6F00EFAC9C /* FiltersSwitchTableViewCell.swift in Sources */,
 				5EC8C38C1DB10C7C00D62672 /* BizDetailVC.swift in Sources */,
 				5E6745B81DB12287002681B2 /* Review.swift in Sources */,
@@ -3290,6 +3294,7 @@
 				DAFB880D1D9F0DAD004DE008 /* UIViewControllerExt.swift in Sources */,
 				DA6AE8081D89124C001E5B65 /* OpenWeatherViewController.swift in Sources */,
 				5E8D29041DA28A6F00EFAC9C /* UISwitch+MyYelp.swift in Sources */,
+				5E91186A1DF18338001DB0CA /* GlobalDirectionCode.swift in Sources */,
 				5EA32C771DAF7C310090482B /* PulleyPassthroughScrollView.swift in Sources */,
 				DA6AE7CA1D88C782001E5B65 /* NOT_Chris_Rock_GPS.xcdatamodeld in Sources */,
 				DA0320FD1D93099600BE0698 /* AudioRecorderViewController.swift in Sources */,
@@ -3303,9 +3308,7 @@
 				DA6AE8011D88C907001E5B65 /* AEXML.swift in Sources */,
 				DAFB88161D9F0F4A004DE008 /* DirectionDetailVC.swift in Sources */,
 				5E8D28F41DA289FC00EFAC9C /* FiltersViewController.swift in Sources */,
-				DA6AE7C21D88C782001E5B65 /* AppDelegate.swift in Sources */,
 				DA6AE7F41D88C7B6001E5B65 /* Constants.swift in Sources */,
-				DAFB88151D9F0F4A004DE008 /* GetDirectionVC.swift in Sources */,
 				DAFB87B01D9DF625004DE008 /* GUtility.swift in Sources */,
 				DA6AE8111D89E442001E5B65 /* SearchResultsController.swift in Sources */,
 				DA8B38751D930550009A6812 /* testViewController.swift in Sources */,
@@ -3316,6 +3319,7 @@
 				DAFB88171D9F0F4A004DE008 /* DirectionDetailTableViewCell.swift in Sources */,
 				DA6AE8061D88E1AA001E5B65 /* YelpAPIClient.swift in Sources */,
 				5E6DF1F61DC2189100DD54FC /* FiveTapGestureRecognizer.swift in Sources */,
+				5E9118661DF180D3001DB0CA /* AppDelegate.swift in Sources */,
 				5EA32C781DAF7C310090482B /* PulleyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

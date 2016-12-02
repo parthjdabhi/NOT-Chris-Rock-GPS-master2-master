@@ -41,12 +41,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LocationManagerDelegate {
         
         configureApp()
         
+        
+//        var i = 1000
+//        while true {
+//            if i == 0 {
+//                break;
+//            }
+//            print("\"\(i)\", ")
+//            i -= 1
+//        }
+        
+        
+        
+        
         AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
             if granted == true {
                 print("Permission granted")
             } else {
                 print("Permission denied")
-                SVProgressHUD.showInfoWithStatus("We require microphone permission to record audio!")
+                SVProgressHUD.showInfoWithStatus("We require microphone permission to play audio!")
             }
         }
         
