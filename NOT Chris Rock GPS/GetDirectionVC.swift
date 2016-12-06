@@ -45,6 +45,7 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     
     var lastSpeedSync:NSDate = NSDate()
     
+    @IBOutlet var vNavHeader: UIView!
     @IBOutlet var btnMenu: UIButton?
     //@IBOutlet weak var drawMap: MKMapView!
     @IBOutlet weak var googleMapsView : GMSMapView!
@@ -58,6 +59,7 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     @IBOutlet weak var Const_P_headerviewHeight: NSLayoutConstraint!
     //@IBOutlet weak var Const_P_lblToLeading: NSLayoutConstraint!
     //@IBOutlet weak var Const_P_btnCLocTrailing: NSLayoutConstraint!
+    @IBOutlet weak var Const_P_LocationInputTopMargin: NSLayoutConstraint!
     
     @IBOutlet weak var Const_P_SRouteLead: NSLayoutConstraint!
     @IBOutlet weak var Const_P_SRouteBottom: NSLayoutConstraint!
@@ -88,10 +90,9 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     }
     
-    func ApplyportraitConstraint(){
-        
+    func ApplyportraitConstraint() {
         Const_P_headerviewHeight.constant = 64
-        
+        Const_P_LocationInputTopMargin.constant = 0
         Const_P_SRouteLead.constant = 8
         Const_P_SRouteBottom.constant = 8
         
@@ -99,10 +100,9 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         //self.view.removeConstraint(self.landScapeConstraint)
     }
     
-    func applyLandScapeConstraint(){
-        
+    func applyLandScapeConstraint() {
         Const_P_headerviewHeight.constant = 44
-        
+        Const_P_LocationInputTopMargin.constant = (isRouteStarted) ? -46 : 0
         Const_P_SRouteLead.constant = 0
         Const_P_SRouteBottom.constant = (-1 * (self.btnStartRoute.frame.height))
         
@@ -146,7 +146,8 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         txtFrom.rightViewMode = UITextFieldViewMode .Always
         
         //txtFrom.setRightMargin()
-        self.startFiveTapGesture()
+        //self.startFiveTapGesture()
+        vNavHeader.addFiveTapGesture(self)
         
         if bizForRoute != nil {
             self.btnMenu?.setTitle("Back", forState: .Normal)
@@ -197,6 +198,10 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
 //        player.mode = .NoRepeat
 //        player.playItems(AudioItems!, startAtIndex: 0)
         
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        UIApplication.sharedApplication().idleTimerDisabled = false
     }
     
     func playerDidFinishPlaying(note: NSNotification) {
@@ -474,6 +479,8 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     {
         isRouteStarted = true
         
+        UIApplication.sharedApplication().idleTimerDisabled = true
+        
         weatherGetter.getWeatherByCoordinates(latitude: CLocation?.coordinate.latitude ?? 0 ,
                                               longitude: CLocation?.coordinate.longitude ?? 0)
         
@@ -601,6 +608,8 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     func stopObservingRoute()
     {
         isRouteStarted = false
+        
+        UIApplication.sharedApplication().idleTimerDisabled = false
         
         self.btnRefresh.hidden = false
         LocationManager.sharedInstance.startUpdatingLocationWithCompletionHandler(nil)

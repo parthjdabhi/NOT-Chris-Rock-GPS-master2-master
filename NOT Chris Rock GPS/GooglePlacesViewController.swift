@@ -38,8 +38,8 @@ class GooglePlacesViewController: UIViewController, UISearchBarDelegate, LocateO
         //self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view, typically from a nib.
         
-        isEnableFivetapGesture = false
-        startFiveTapGesture()
+        //isEnableFivetapGesture = false
+        //startFiveTapGesture()
         
         btnSearch.titleLabel?.numberOfLines = 2
         btnSearch.titleLabel?.textAlignment = .Center

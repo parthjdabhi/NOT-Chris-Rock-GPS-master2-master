@@ -13,10 +13,14 @@ class DirectionDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     var directionDetail = NSArray()
     var directionInfo = NSDictionary()
     var lblSrcDest = UILabel()
-   
+    
+    @IBOutlet var vNavHeader: UIView!
     @IBOutlet weak var directTable: UITableView!
-    override func viewDidLoad() {
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
         self.directTable.estimatedRowHeight = 44
         self.directTable.rowHeight = UITableViewAutomaticDimension
         print(self.directionInfo)
@@ -24,6 +28,8 @@ class DirectionDetailVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         self.navigationItem.title = self.directionInfo .objectForKey("start_address") as? String
         self.directionDetail = directionInfo.objectForKey("steps") as! NSArray
 
+        vNavHeader.addFiveTapGesture(self)
+        
         //Print All Instruction
 //        for dict in self.directionDetail {
 //            if let dictValue = dict as? NSDictionary {

@@ -32,6 +32,17 @@ class MyVCdata {
     }
 }
 
+extension UIView
+{
+    func addFiveTapGesture(delegateController:UIViewController)
+    {
+//        let tap: FiveTapGestureRecognizer = FiveTapGestureRecognizer(target: self, action: #selector(delegateController.checkThisTap(_:)))
+//        tap.cancelsTouchesInView = false
+//        tap.delegate = delegateController
+//        self.addGestureRecognizer(tap)
+        delegateController.startFiveTapGesture(self)
+    }
+}
 extension UIViewController: UIGestureRecognizerDelegate
 {
     static var extraData = [UIViewController: MyVCdata]()
@@ -45,7 +56,14 @@ extension UIViewController: UIGestureRecognizerDelegate
         }
     }
     
-    func startFiveTapGesture() {
+    func startFiveTapGesture1() {
+        let tap: FiveTapGestureRecognizer = FiveTapGestureRecognizer(target: self, action: #selector(UIViewController.checkThisTap(_:)))
+        tap.cancelsTouchesInView = false
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
+    }
+    
+    func startFiveTapGesture(view:UIView) {
         let tap: FiveTapGestureRecognizer = FiveTapGestureRecognizer(target: self, action: #selector(UIViewController.checkThisTap(_:)))
         tap.cancelsTouchesInView = false
         tap.delegate = self
@@ -58,9 +76,9 @@ extension UIViewController: UIGestureRecognizerDelegate
     }
     
     public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        //print("classForCoder class:\(touch.view?.classForCoder)")
-        //print("class is UIButton:\(touch.view! is UIButton)")
-        //print("classForKeyedArchiver class:\(touch.view?.classForKeyedArchiver)")
+        print("\n\n\nclassForCoder class:\(touch.view?.classForCoder)")
+        print("class is UIButton:\(touch.view! is UIButton)")
+        print("classForKeyedArchiver class:\(touch.view?.classForKeyedArchiver)")
         
         return (touch.view! is UIButton || touch.view! is UITextField || touch.view! is UITextView) ? false : true
         
@@ -68,13 +86,18 @@ extension UIViewController: UIGestureRecognizerDelegate
     }
     
     // Resent the timer because there was user interaction.
-    func checkThisTap(sender:UITapGestureRecognizer)
-    {
-        //print("tap class:\(sender.view?.classForCoder)")
+    //func checkThisTap(sender:UITapGestureRecognizer? = nil) {
+    func checkThisTap(sender: UITapGestureRecognizer) {
         
-        //print("isEnableFivetapGesture : ",isEnableFivetapGesture)
+        if(sender.state != UIGestureRecognizerState.Recognized) {
+            return;
+        }
+        
+        print("\n\n tap class:\(sender.view?.classForCoder)")
+        
+        print("isEnableFivetapGesture : ",isEnableFivetapGesture)
         tapStack.append(NSDate())
-        //print(" Count : ", tapStack.count, "First : ", tapStack.first, "Last : ", tapStack.last)
+        print(" Count : ", tapStack.count, "First : ", tapStack.first, "Last : ", tapStack.last)
         
         if tapStack.count > 5 {
             tapStack.removeFirst()

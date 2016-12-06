@@ -42,8 +42,8 @@ class MySlideMenuController : UIViewController {
         super.viewDidLoad()
         self.view.layoutIfNeeded()
         
-        isEnableFivetapGesture = true
-        startFiveTapGesture()
+        //isEnableFivetapGesture = true
+        //startFiveTapGesture()
 
         imgProfile?.layoutIfNeeded()
         imgProfile?.layer.cornerRadius = (imgProfile?.frame.width ?? 1) / 2

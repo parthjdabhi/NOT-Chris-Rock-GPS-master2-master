@@ -23,6 +23,7 @@ class MainViewController: UIViewController,PulleyPrimaryContentControllerDelegat
     
     // MARK: -
     // MARK: Vars
+    @IBOutlet var vNavHeader: UIView!
     //@IBOutlet var googleMapsView: GMSMapView!
     @IBOutlet var googleMVContainer: UIView!
     @IBOutlet weak var btnRefreshNearByPlace: UIButton!
@@ -52,7 +53,9 @@ class MainViewController: UIViewController,PulleyPrimaryContentControllerDelegat
         // Do any additional setup after loading the view, typically from a nib.
         
         isEnableFivetapGesture = true
-        startFiveTapGesture()
+        //startFiveTapGesture()
+        vNavHeader.addFiveTapGesture(self)
+        
         //self.btnDirection.hidden = true
         
         searchResultController = BizSearchController()

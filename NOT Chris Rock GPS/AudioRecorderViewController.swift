@@ -65,7 +65,14 @@ class AudioRecorderViewController: UIViewController {
         
         //recordButton.layer.cornerRadius = 4
         
-        self.startFiveTapGesture()
+        self.view.addFiveTapGesture(self)
+        //self.startFiveTapGesture()
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("isCopStopFirstTime") == nil {
+            NSUserDefaults.standardUserDefaults().setObject("1", forKey: "isCopStopFirstTime")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            SVProgressHUD.showSuccessWithStatus("CopStop is now enabled")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
