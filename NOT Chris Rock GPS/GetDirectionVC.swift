@@ -837,10 +837,16 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         }
         
         // Directional Statements
-        if inst.containsIgnoringCase("Turn right") || inst.containsIgnoringCase("turns left") {
+        if inst.containsIgnoringCase("Turn right") {
+            //Audio: Turn Right
+            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Directional/turn-right.wav")
+        } else if inst.containsIgnoringCase("Turn left") {
+            //Audio: Turn Left
+            self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Directional/turn-left.wav")
+        } else if inst.containsIgnoringCase("To right") || inst.containsIgnoringCase("To the right") || inst.containsIgnoringCase("Turn right to") {
             //Audio: Turn Right
             self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Directional/to-the-right.wav")
-        } else if inst.containsIgnoringCase("Turn left") || inst.containsIgnoringCase("turns right") {
+        } else if inst.containsIgnoringCase("To left") || inst.containsIgnoringCase("To the left") || inst.containsIgnoringCase("Turn left to") {
             //Audio: Turn Left
             self.AddAudioToQueue(ofUrl: "\(BaseUrlSounds)Directional/to-the-left.wav")
         } else if inst.containsIgnoringCase("Turn right onto") {
@@ -1644,8 +1650,6 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
                 break
             }
         }
-        
-        
         
         StartPlaying()
     }

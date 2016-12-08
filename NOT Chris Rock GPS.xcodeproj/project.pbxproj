@@ -19,6 +19,8 @@
 		5E3426E71D9FD55300DFF2F9 /* VoiceHelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3426E61D9FD55300DFF2F9 /* VoiceHelpVC.swift */; };
 		5E3426EA1DA0134300DFF2F9 /* NY2Brooklyn.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5E3426E81DA0134300DFF2F9 /* NY2Brooklyn.gpx */; };
 		5E3426EB1DA0134300DFF2F9 /* NY2Brooklyn_route.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5E3426E91DA0134300DFF2F9 /* NY2Brooklyn_route.gpx */; };
+		5E49CA981DF9931E005458E8 /* turn-right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E49CA961DF9931E005458E8 /* turn-right.wav */; };
+		5E49CA991DF9931E005458E8 /* turn-left.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E49CA971DF9931E005458E8 /* turn-left.wav */; };
 		5E4E78A61DD09241005F6885 /* accident-ahead.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E4E772C1DD09241005F6885 /* accident-ahead.wav */; };
 		5E4E78A71DD09241005F6885 /* and-destination-on-the-left.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E4E772D1DD09241005F6885 /* and-destination-on-the-left.wav */; };
 		5E4E78A81DD09241005F6885 /* and-destination-on-the-right.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E4E772E1DD09241005F6885 /* and-destination-on-the-right.wav */; };
@@ -693,6 +695,8 @@
 		5E3426E61D9FD55300DFF2F9 /* VoiceHelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceHelpVC.swift; sourceTree = "<group>"; };
 		5E3426E81DA0134300DFF2F9 /* NY2Brooklyn.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NY2Brooklyn.gpx; sourceTree = "<group>"; };
 		5E3426E91DA0134300DFF2F9 /* NY2Brooklyn_route.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NY2Brooklyn_route.gpx; sourceTree = "<group>"; };
+		5E49CA961DF9931E005458E8 /* turn-right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "turn-right.wav"; sourceTree = "<group>"; };
+		5E49CA971DF9931E005458E8 /* turn-left.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "turn-left.wav"; sourceTree = "<group>"; };
 		5E4E772C1DD09241005F6885 /* accident-ahead.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "accident-ahead.wav"; sourceTree = "<group>"; };
 		5E4E772D1DD09241005F6885 /* and-destination-on-the-left.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "and-destination-on-the-left.wav"; sourceTree = "<group>"; };
 		5E4E772E1DD09241005F6885 /* and-destination-on-the-right.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "and-destination-on-the-right.wav"; sourceTree = "<group>"; };
@@ -1426,6 +1430,8 @@
 		5E4E772B1DD09241005F6885 /* Directional */ = {
 			isa = PBXGroup;
 			children = (
+				5E49CA961DF9931E005458E8 /* turn-right.wav */,
+				5E49CA971DF9931E005458E8 /* turn-left.wav */,
 				5E4E772C1DD09241005F6885 /* accident-ahead.wav */,
 				5E4E772D1DD09241005F6885 /* and-destination-on-the-left.wav */,
 				5E4E772E1DD09241005F6885 /* and-destination-on-the-right.wav */,
@@ -2533,6 +2539,7 @@
 				5E4E79731DD09241005F6885 /* after.wav in Resources */,
 				5E4E79B61DD09241005F6885 /* per.wav in Resources */,
 				5EC048161DD19F1E0034EA37 /* pappadeux.wav in Resources */,
+				5E49CA981DF9931E005458E8 /* turn-right.wav in Resources */,
 				5E4E78C01DD09241005F6885 /* then-merge-left.wav in Resources */,
 				5E4E79781DD09241005F6885 /* among2.wav in Resources */,
 				5E4E78A91DD09241005F6885 /* check-yoself-speed-warning.wav in Resources */,
@@ -2838,6 +2845,7 @@
 				5EC0481E1DD19F1E0034EA37 /* pret-a-manager.wav in Resources */,
 				5E4E79631DD09241005F6885 /* parking.wav in Resources */,
 				5E4E791F1DD09241005F6885 /* noodles.wav in Resources */,
+				5E49CA991DF9931E005458E8 /* turn-left.wav in Resources */,
 				5E4E79911DD09241005F6885 /* by2.wav in Resources */,
 				5E4E79A21DD09241005F6885 /* like.wav in Resources */,
 				5E4E792D1DD09241005F6885 /* steak.wav in Resources */,
