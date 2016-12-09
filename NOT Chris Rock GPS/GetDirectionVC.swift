@@ -134,7 +134,7 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         
         
         let btnCLocation = UIButton(frame: CGRectMake(0, 0, 22, 22))
-        btnCLocation.setBackgroundImage(UIImage(named: "ic_qu_direction_mylocation"), forState: .Normal)
+        btnCLocation.setBackgroundImage(UIImage(named: "ic_current_location"), forState: .Normal)
 //        btnCLocation.per
         btnCLocation.addTarget(self, action: #selector(GetDirectionVC.actinoSetFromCurrentLocation(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -306,6 +306,9 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
             where curLocation.coordinate.latitude != 0
                 && curLocation.coordinate.longitude != 0
         {
+            if isRouteStarted {
+                self.stopObservingRoute()
+            }
             txtFrom.text = "Current Location"
         } else {
             SVProgressHUD.showInfoWithStatus("Oops, We are unable to find your location.. \n you can try to search")
@@ -619,8 +622,8 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         routeTimer?.invalidate()
     }
     
-    func playSoundForInstruction(instruction:String?) {
-        
+    func playSoundForInstruction(instruction:String?)
+    {
         AudioItems?.removeAll()
         player.stop()
         
@@ -1720,8 +1723,12 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
     
     @IBAction func ClickToGo(sender: AnyObject?)
     {
-        if self.btnStartRoute.enabled
-            && self.btnStartRoute.tag == 2
+        // WARNING :: TO TEST ONLY
+        // self.playSoundForInstruction("Turn left Burgerking to continue on US-101")
+        
+        if (self.btnStartRoute.enabled
+            && self.btnStartRoute.tag == 2)
+            || isRouteStarted
         {
             self.btnStartRoute.setTitle("Start Route", forState: .Normal)
             self.btnStartRoute.backgroundColor = clrRed
