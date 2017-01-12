@@ -13,6 +13,8 @@ import Alamofire
 import SwiftyJSON
 import SVProgressHUD
 
+public typealias blockAction = () -> Void
+
 class CommonUtils: NSObject {
     static let sharedUtils = CommonUtils()
     var progressView : MBProgressHUD = MBProgressHUD.init()

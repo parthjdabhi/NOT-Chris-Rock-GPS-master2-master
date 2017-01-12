@@ -14,6 +14,7 @@ import SWRevealViewController
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import SVProgressHUD
 
 class GooglePlacesViewController: UIViewController, UISearchBarDelegate, LocateOnTheMap, GMSMapViewDelegate, CLLocationManagerDelegate {
     
@@ -249,6 +250,11 @@ class GooglePlacesViewController: UIViewController, UISearchBarDelegate, LocateO
     //Searcing by yelp api
     func showNearByPlace(ofCategory:[String])
     {
+        if LocationManager.sharedInstance.latitude == 0 &&
+            LocationManager.sharedInstance.longitude == 0 {
+            SVProgressHUD.showInfoWithStatus("We requires location permission.")
+            return
+        }
         
         guard let client = YelpClient.sharedInstance else { return }
         client.location = "\(CLocation!.coordinate.latitude),\(CLocation!.coordinate.longitude)"

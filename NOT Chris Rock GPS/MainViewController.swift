@@ -360,6 +360,12 @@ class MainViewController: UIViewController,PulleyPrimaryContentControllerDelegat
     // Perform the search.
     private func doSearch(showLoader:Bool = true)
     {
+        if LocationManager.sharedInstance.latitude == 0 &&
+        LocationManager.sharedInstance.longitude == 0 {
+            SVProgressHUD.showInfoWithStatus("We requires location permission.")
+            return
+        }
+        
         // Perform request to Yelp API to get the list of businessees
         guard let client = YelpClient.sharedInstance else { return }
         
@@ -385,7 +391,15 @@ class MainViewController: UIViewController,PulleyPrimaryContentControllerDelegat
         })
     }
     
-    private func doSearchSuggestion() {
+    private func doSearchSuggestion()
+    {
+        
+        if LocationManager.sharedInstance.latitude == 0 &&
+            LocationManager.sharedInstance.longitude == 0 {
+            SVProgressHUD.showInfoWithStatus("We requires location permission.")
+            return
+        }
+        
         // Perform request to Yelp API to get the list of businessees
         guard let client = YelpClient.sharedInstance else { return }
         SVProgressHUD.showWithStatus("Searching..")

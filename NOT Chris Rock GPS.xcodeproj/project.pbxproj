@@ -401,6 +401,7 @@
 		5E9118661DF180D3001DB0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6AE7C11D88C782001E5B65 /* AppDelegate.swift */; };
 		5E9118681DF180EA001DB0CA /* GetDirectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFB88111D9F0F4A004DE008 /* GetDirectionVC.swift */; };
 		5E91186A1DF18338001DB0CA /* GlobalDirectionCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9118691DF18338001DB0CA /* GlobalDirectionCode.swift */; };
+		5E9A09911E27AFF40017EF15 /* LocationPermissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9A09901E27AFF40017EF15 /* LocationPermissionVC.swift */; };
 		5EA32C771DAF7C310090482B /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA32C751DAF7C310090482B /* PulleyPassthroughScrollView.swift */; };
 		5EA32C781DAF7C310090482B /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA32C761DAF7C310090482B /* PulleyViewController.swift */; };
 		5EA32C7C1DAF7C3D0090482B /* DrawerContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA32C791DAF7C3D0090482B /* DrawerContentViewController.swift */; };
@@ -1075,6 +1076,7 @@
 		5E8D28FF1DA28A6F00EFAC9C /* UISwitch+MyYelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+MyYelp.swift"; sourceTree = "<group>"; };
 		5E8D29061DA28A9400EFAC9C /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		5E9118691DF18338001DB0CA /* GlobalDirectionCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalDirectionCode.swift; sourceTree = "<group>"; };
+		5E9A09901E27AFF40017EF15 /* LocationPermissionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPermissionVC.swift; sourceTree = "<group>"; };
 		5EA32C751DAF7C310090482B /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyPassthroughScrollView.swift; sourceTree = "<group>"; };
 		5EA32C761DAF7C310090482B /* PulleyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PulleyViewController.swift; sourceTree = "<group>"; };
 		5EA32C791DAF7C3D0090482B /* DrawerContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerContentViewController.swift; sourceTree = "<group>"; };
@@ -1942,6 +1944,14 @@
 			name = "Mock Location Files";
 			sourceTree = "<group>";
 		};
+		5E9A098F1E27AFCF0017EF15 /* Permission VC */ = {
+			isa = PBXGroup;
+			children = (
+				5E9A09901E27AFF40017EF15 /* LocationPermissionVC.swift */,
+			);
+			name = "Permission VC";
+			sourceTree = "<group>";
+		};
 		5EA32C741DAF7C310090482B /* BottomDrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -2270,6 +2280,7 @@
 				DA6AE7FD1D88C8D6001E5B65 /* Storyboard & Plist */,
 				DA6AE7C11D88C782001E5B65 /* AppDelegate.swift */,
 				DAFB87AF1D9DF625004DE008 /* MySlideMenuController.swift */,
+				5E9A098F1E27AFCF0017EF15 /* Permission VC */,
 				5E8D29081DA28A9600EFAC9C /* API */,
 				5E8D28FA1DA28A5900EFAC9C /* Models */,
 				5E8D29051DA28A7500EFAC9C /* Custom Views */,
@@ -2479,6 +2490,7 @@
 				TargetAttributes = {
 					DA6AE7BD1D88C782001E5B65 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8MJC8PBK8R;
 					};
 					DA6AE7D41D88C782001E5B65 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -3315,6 +3327,7 @@
 				5E8D29021DA28A6F00EFAC9C /* FiltersSeeAllTableViewCell.swift in Sources */,
 				DA6AE8011D88C907001E5B65 /* AEXML.swift in Sources */,
 				DAFB88161D9F0F4A004DE008 /* DirectionDetailVC.swift in Sources */,
+				5E9A09911E27AFF40017EF15 /* LocationPermissionVC.swift in Sources */,
 				5E8D28F41DA289FC00EFAC9C /* FiltersViewController.swift in Sources */,
 				DA6AE7F41D88C7B6001E5B65 /* Constants.swift in Sources */,
 				DAFB87B01D9DF625004DE008 /* GUtility.swift in Sources */,
@@ -3474,6 +3487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NOT",
@@ -3497,6 +3511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NOT",

@@ -460,7 +460,7 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         {
             //Rainy day
             if let mp3Url = NSURL(string: "\(BaseUrlSounds)General-Categories/home-services.wav") {
-                //            mp3Urls.append(mp3Url)
+                //mp3Urls.append(mp3Url)
                 if let AudioIdem = AudioItem(soundURLs: [AudioQuality.Medium : mp3Url]) {
                     player.mode = .NoRepeat
                     player.playItem(AudioIdem)
@@ -469,7 +469,7 @@ class GetDirectionVC: UIViewController,UITextFieldDelegate,UISearchBarDelegate, 
         } else {
             //Sunny day
             if let mp3Url = NSURL(string: "\(BaseUrlSounds)General-Categories/home-services.wav") {
-                //            mp3Urls.append(mp3Url)
+                //mp3Urls.append(mp3Url)
                 if let AudioIdem = AudioItem(soundURLs: [AudioQuality.Medium : mp3Url]) {
                     player.mode = .NoRepeat
                     player.playItem(AudioIdem)

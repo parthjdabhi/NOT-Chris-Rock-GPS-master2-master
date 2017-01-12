@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LocationManagerDelegate {
     var window: UIWindow?
     var navigationController: UINavigationController?
     var locationManager = LocationManager.sharedInstance
+    var storyBoard: UIStoryboard?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -39,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LocationManagerDelegate {
         
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
         
+        storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    
         configureApp()
         
         
@@ -50,9 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LocationManagerDelegate {
 //            print("\"\(i)\", ")
 //            i -= 1
 //        }
-        
-        
-        
         
         AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
             if granted == true {
@@ -95,6 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LocationManagerDelegate {
         locationManager.startUpdatingLocationWithCompletionHandler { (latitude, longitude, status, verboseMessage, error) in
             CLocation = CLLocation(latitude: latitude, longitude: longitude)
             print("startUpdatingLocationWithCompletionHandler",self.locationManager.latitude," - ",self.locationManager.longitude)
+            print("latitude :\(latitude), longitude :\(longitude), longitude :\(longitude), status :\(status), verboseMessage :\(verboseMessage), error :\(error), ")
         }
         
         CLocation = CLLocation(latitude: locationManager.latitude, longitude: locationManager.longitude)
@@ -173,8 +174,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LocationManagerDelegate {
         
     }
     
-    func locationManagerReceivedError(error:NSString) {
-        
+    func locationManagerReceivedError(error:NSString)
+    {
+        print("Location error: \(error)")
+        delay(1, closure: {
+            let vc = self.storyBoard?.instantiateViewControllerWithIdentifier("LocationPermissionVC") as? LocationPermissionVC
+            UIApplication.topViewController()?.navigationController?.presentViewController(vc!, animated: true, completion: nil)
+        })
     }
     
     func locationManagerVerboseMessage(message:NSString) {

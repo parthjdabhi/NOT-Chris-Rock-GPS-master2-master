@@ -194,6 +194,12 @@ class DrawerContentViewController: UIViewController, UITableViewDelegate, UITabl
         // Perform request to Yelp API to get the list of businessees
         guard let client = YelpClient.sharedInstance else { return }
         
+        if LocationManager.sharedInstance.latitude == 0 &&
+            LocationManager.sharedInstance.longitude == 0 {
+            SVProgressHUD.showInfoWithStatus("We requires location permission.")
+            return
+        }
+        
         if showLoader == true {
             SVProgressHUD.showWithStatus("Searching..")
         }

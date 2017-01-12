@@ -14,7 +14,7 @@ protocol WeatherGetterDelegate {
 }
 
 class WeatherGetter {
-    
+    //http://api.openweathermap.org/data/2.5/weather?APPID=a08c4589e8e874b28372aa244086a49c&lat=&lon=
     private let openWeatherMapBaseURL = "http://api.openweathermap.org/data/2.5/weather"
     private let openWeatherMapAPIKey = "a08c4589e8e874b28372aa244086a49c"
     

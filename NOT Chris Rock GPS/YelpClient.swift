@@ -102,6 +102,8 @@ class YelpClient : OAuthSwiftClient {
     func getBusinessDetail(with businessId: String, completion: (Business, NSError!) -> Void) {
         
         print("searchWithbusinessId : ",businessId)
+        print("https://api.yelp.com/v2/business/\(businessId)?actionlinks=True")
+        
         YelpClient.sharedInstance?.get("https://api.yelp.com/v2/business/\(businessId)", parameters: ["actionlinks":"True"], headers: nil, success: { (data, response) in
             
             let jsonData = try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as? NSDictionary

@@ -316,7 +316,7 @@ class LocationManager: NSObject,CLLocationManagerDelegate {
         }else{
             
             resetLatLon()
-            if (!locationStatus.isEqualToString("Denied access")){
+            if (!locationStatus.isEqualToString("Denied access")) {
                 
                 var verbose = ""
                 if showVerboseMessage {

@@ -71,3 +71,14 @@ func getBearingBetweenTwoPoints(point1 : CLLocation, point2 : CLLocation) -> Dou
     
     return radiansToDegrees(radiansBearing)
 }
+
+// // MARK: - Methods
+
+func delay(delay:Double, closure:()->()) {
+    dispatch_after(
+        dispatch_time(
+            DISPATCH_TIME_NOW,
+            Int64(delay * Double(NSEC_PER_SEC))
+        ),
+        dispatch_get_main_queue(), closure)
+}
